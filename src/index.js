@@ -1,15 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import Todo from "./Todo";
 
 import "./styles.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoList: "One"
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>React TO DO</h1>
+        <Todo todoList={this.state.todoList} />
+      </div>
+    );
+  }
 }
 
 const rootElement = document.getElementById("root");
